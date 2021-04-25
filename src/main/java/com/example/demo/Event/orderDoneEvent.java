@@ -1,19 +1,17 @@
 package com.example.demo.Event;
 
-import com.example.demo.Models.Order;
-import com.example.demo.Models.Pizza;
+import com.example.demo.Models.Orders;
 import org.springframework.context.ApplicationEvent;
-import org.springframework.stereotype.Component;
 
 public class orderDoneEvent extends ApplicationEvent {
-    private Order order;
+    private Orders orders;
 
-    public orderDoneEvent(Object source, Order order) {
+    public orderDoneEvent(Object source, Orders orders) {
         super(source);
-        this.order = order;
+        this.orders = orders;
     }
 
-    public Order getOrder() {
-        return order;
+    public Orders getOrder() {
+        return orders;
     }
 }
