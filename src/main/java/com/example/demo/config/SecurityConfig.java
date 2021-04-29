@@ -31,6 +31,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/pizza/delete").hasAuthority("ADMIN")
                 .antMatchers("/pizza/create").hasAuthority("ADMIN")
                 .antMatchers("/pizza/update").hasAuthority("ADMIN")
+                .antMatchers("/v2/api-docs",
+                        "/swagger-resources/**",
+                        "/configuration/ui",
+                        "/configuration/security",
+                        "/swagger-ui.html",
+                        "/webjars/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .addFilter(new JwtTokenGeneratorFilter(authenticationManager()))

@@ -1,8 +1,12 @@
 package com.example.demo.Models;
 
 import javax.persistence.*;
+import lombok.*;
 
 @Entity
+@Setter
+@Getter
+@NoArgsConstructor
 public class Pizza {
 
     @Id
@@ -13,26 +17,6 @@ public class Pizza {
 
     public Pizza(String name, Double price) {
         this.name = name;
-        this.price = price;
-    }
-
-    public Pizza() {
-
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public Double getPrice() {
-        return price;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setPrice(Double price) {
         this.price = price;
     }
 
